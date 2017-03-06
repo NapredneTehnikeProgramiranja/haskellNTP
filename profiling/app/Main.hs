@@ -3,6 +3,7 @@
 module Main where
 
 import           ExplicitCostCenters
+import           Mean
 import           SimpleProfiling
 
 main :: IO ()
