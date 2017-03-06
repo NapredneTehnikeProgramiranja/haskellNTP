@@ -1,0 +1,121 @@
+	Mon Mar  6 15:27 2017 Time and Allocation Profiling Report  (Final)
+
+	   profiling-exe +RTS -N -pa -RTS
+
+	total time  =        0.58 secs   (577 ticks @ 1000 us, 1 processor)
+	total alloc = 384,115,072 bytes  (excludes profiling overheads)
+
+COST CENTRE  MODULE                  SRC                         %time %alloc  ticks     bytes
+
+GC           GC                      <built-in>                   72.3    0.0    417         0
+main.ys      Main                    app/Main.hs:28:17-33          9.4   37.5     54 144000016
+last_init_ys Main                    app/Main.hs:26:44-57          6.4   29.2     37 111999960
+main.xs      Main                    app/Main.hs:27:17-33          5.4   18.7     31  72000016
+last_init_xs Main                    app/Main.hs:24:44-57          3.6   14.6     21  55999960
+last_ys      Main                    app/Main.hs:25:39-45          1.0    0.0      6        16
+last_xs      Main                    app/Main.hs:23:39-45          1.0    0.0      6        16
+SYSTEM       SYSTEM                  <built-in>                    0.9    0.0      5     35728
+IDLE         IDLE                    <built-in>                    0.0    0.0      0         0
+PINNED       SYSTEM                  <built-in>                    0.0    0.0      0         0
+DONT_CARE    MAIN                    <built-in>                    0.0    0.0      0         0
+OVERHEAD_of  PROFILING               <built-in>                    0.0    0.0      0         0
+MAIN         MAIN                    <built-in>                    0.0    0.0      0     22824
+CAF          GHC.Integer.Type        <entire-module>               0.0    0.0      0         0
+CAF          GHC.Err                 <entire-module>               0.0    0.0      0         0
+CAF          GHC.Enum                <entire-module>               0.0    0.0      0         0
+CAF          Foreign.Marshal.Alloc   <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.PSQ           <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.Manager       <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.Array         <entire-module>               0.0    0.0      0         0
+CAF          GHC.Stack.CCS           <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Encoding.UTF32   <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Encoding.Latin1  <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.TimerManager  <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.EPoll         <entire-module>               0.0    0.0      0        48
+CAF          GHC.Show                <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Handle.Types     <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.FD               <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Encoding.UTF8    <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Encoding.UTF16   <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Encoding.Iconv   <entire-module>               0.0    0.0      0       232
+CAF          GHC.IO.Encoding.Failure <entire-module>               0.0    0.0      0         0
+CAF          GHC.Exception           <entire-module>               0.0    0.0      0         0
+CAF          GHC.Arr                 <entire-module>               0.0    0.0      0         0
+CAF          GHC.Event.Poll          <entire-module>               0.0    0.0      0        96
+CAF          GHC.Event.Internal      <entire-module>               0.0    0.0      0         0
+CAF          System.Posix.Internals  <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Handle.Internals <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Handle           <entire-module>               0.0    0.0      0         0
+CAF          GHC.ForeignPtr          <entire-module>               0.0    0.0      0         0
+CAF          GHC.Conc.Sync           <entire-module>               0.0    0.0      0         0
+CAF          GHC.Conc.Signal         <entire-module>               0.0    0.0      0       640
+CAF          GHC.Event.Control       <entire-module>               0.0    0.0      0         0
+CAF          GHC.List                <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Handle.Text      <entire-module>               0.0    0.0      0        88
+CAF          GHC.IO.Encoding         <entire-module>               0.0    0.0      0      2872
+CAF          GHC.Event.Thread        <entire-module>               0.0    0.0      0      1232
+CAF          GHC.TopHandler          <entire-module>               0.0    0.0      0         0
+CAF          GHC.IO.Handle.FD        <entire-module>               0.0    0.0      0     34512
+CAF          GHC.IO.Exception        <entire-module>               0.0    0.0      0         0
+CAF          Control.Exception.Base  <entire-module>               0.0    0.0      0         0
+main         Main                    app/Main.hs:(23,1)-(28,33)    0.0    0.0      0     16800
+CAF          Main                    <entire-module>               0.0    0.0      0        16
+
+
+                                                                                      individual      inherited
+COST CENTRE     MODULE                  SRC                        no.     entries  %time %alloc   %time %alloc  ticks     bytes
+
+MAIN            MAIN                    <built-in>                  46          0    0.0    0.0   100.0  100.0      0     22824
+ CAF            Main                    <entire-module>             91          0    0.0    0.0    26.9  100.0      0        16
+  main          Main                    app/Main.hs:(23,1)-(28,33)  92          1    0.0    0.0    26.9  100.0      0      1208
+   last_init_xs Main                    app/Main.hs:24:44-57        96          1    3.6   14.6     3.6   14.6     21  55999960
+   last_init_ys Main                    app/Main.hs:26:44-57        99          1    6.4   29.2     6.4   29.2     37 111999960
+   last_xs      Main                    app/Main.hs:23:39-45        94          1    1.0    0.0     1.0    0.0      6        16
+   last_ys      Main                    app/Main.hs:25:39-45        97          1    1.0    0.0     1.0    0.0      6        16
+   main.xs      Main                    app/Main.hs:27:17-33        95          1    5.4   18.7     5.4   18.7     31  72000016
+   main.ys      Main                    app/Main.hs:28:17-33        98          1    9.4   37.5     9.4   37.5     54 144000016
+ CAF            Control.Exception.Base  <entire-module>             90          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Exception        <entire-module>             89          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Handle.FD        <entire-module>             88          0    0.0    0.0     0.0    0.0      0     34512
+ CAF            GHC.TopHandler          <entire-module>             87          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Thread        <entire-module>             86          0    0.0    0.0     0.0    0.0      0      1232
+ CAF            GHC.IO.Encoding         <entire-module>             85          0    0.0    0.0     0.0    0.0      0      2872
+ CAF            GHC.IO.Handle.Text      <entire-module>             84          0    0.0    0.0     0.0    0.0      0        88
+ CAF            GHC.List                <entire-module>             83          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Control       <entire-module>             82          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Conc.Signal         <entire-module>             81          0    0.0    0.0     0.0    0.0      0       640
+ CAF            GHC.Conc.Sync           <entire-module>             80          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.ForeignPtr          <entire-module>             79          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Handle           <entire-module>             78          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Handle.Internals <entire-module>             77          0    0.0    0.0     0.0    0.0      0         0
+ CAF            System.Posix.Internals  <entire-module>             76          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Internal      <entire-module>             75          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Poll          <entire-module>             74          0    0.0    0.0     0.0    0.0      0        96
+ CAF            GHC.Arr                 <entire-module>             73          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Exception           <entire-module>             72          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Encoding.Failure <entire-module>             71          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Encoding.Iconv   <entire-module>             70          0    0.0    0.0     0.0    0.0      0       232
+ CAF            GHC.IO.Encoding.UTF16   <entire-module>             69          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Encoding.UTF8    <entire-module>             68          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.FD               <entire-module>             67          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Handle.Types     <entire-module>             66          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Show                <entire-module>             65          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.EPoll         <entire-module>             64          0    0.0    0.0     0.0    0.0      0        48
+ CAF            GHC.Event.TimerManager  <entire-module>             63          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Encoding.Latin1  <entire-module>             62          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.IO.Encoding.UTF32   <entire-module>             61          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Stack.CCS           <entire-module>             60          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Array         <entire-module>             59          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.Manager       <entire-module>             58          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Event.PSQ           <entire-module>             57          0    0.0    0.0     0.0    0.0      0         0
+ CAF            Foreign.Marshal.Alloc   <entire-module>             56          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Enum                <entire-module>             55          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Err                 <entire-module>             54          0    0.0    0.0     0.0    0.0      0         0
+ CAF            GHC.Integer.Type        <entire-module>             53          0    0.0    0.0     0.0    0.0      0         0
+ DONT_CARE      MAIN                    <built-in>                  49          0    0.0    0.0     0.0    0.0      0         0
+ GC             GC                      <built-in>                  51          0   72.3    0.0    72.3    0.0    417         0
+ IDLE           IDLE                    <built-in>                  47          0    0.0    0.0     0.0    0.0      0         0
+ OVERHEAD_of    PROFILING               <built-in>                  50          0    0.0    0.0     0.0    0.0      0         0
+ PINNED         SYSTEM                  <built-in>                  48          0    0.0    0.0     0.0    0.0      0         0
+ SYSTEM         SYSTEM                  <built-in>                  52          0    0.9    0.0     0.9    0.0      5     35728
+ main           Main                    app/Main.hs:(23,1)-(28,33)  93          0    0.0    0.0     0.0    0.0      0     15592

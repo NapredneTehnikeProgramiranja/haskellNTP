@@ -6,4 +6,4 @@ import           ExplicitCostCenters
 import           SimpleProfiling
 
 main :: IO ()
-main = explicitCostCenters
+  main = explicitCostCenters
