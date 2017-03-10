@@ -43,7 +43,7 @@ instance Human PhDStudent
 -- PhdStudent instanca predavača
 instance Lecturer PhDStudent where
   introduce (PhDStudent (HumanInfo n _ _) _ t) =
-    "I am " ++ n ++ " and my research is directed towards " ++ t
+    "I am " ++ n ++ " and my research is directed towards " ++ t ++ "."
 
 --------------------------------------------------------------------------------
 -- Primeri:
@@ -71,4 +71,4 @@ zika =
 -- "A poor man is struggling."
 --
 -- λ> introduce zika
--- "I am Zika and my research is directed towards functional programming"
+-- "I am Zika and my research is directed towards functional programming."
