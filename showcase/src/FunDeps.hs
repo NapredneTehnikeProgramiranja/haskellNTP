@@ -17,7 +17,7 @@ data Milk = Milk
   , desc :: String
   } deriving (Show)
 
--- Carton i Milk instanca raspakivanja, kada se raspakuje mpleko iz
+-- Carton i Milk instanca raspakivanja, kada se raspakuje mleko iz
 -- kartona
 instance Unpack Carton Milk where
   unpack p = Milk "cow milk" $ "carton of " ++ (show . volume $ p) ++ " volume."
