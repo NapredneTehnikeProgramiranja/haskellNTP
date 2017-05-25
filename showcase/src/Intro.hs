@@ -116,3 +116,82 @@ foo n
   | n < 0            = 0
   | n `mod` 17 == 2  = -43
   | otherwise        = n + 3
+
+p :: (Int, [Char])
+p = (43, "čestrestridvajestri")
+
+p1 :: (Int, [Char])
+p1 = (1, "two")
+
+p2 :: (Integer, [Char])
+p2 = (1, "two")
+
+p3 :: (Double, Double)
+p3 = (2.2, 2.2)
+
+mulPair :: (Int, Int) -> Int
+mulPair (x, y) = x * y
+-- λ> mulPair (2, 3)
+-- 6
+
+multiArgFoo :: Int -> Int -> Int -> Int
+multiArgFoo x y z = x * y * z
+sv = multiArgFoo 1 2 3
+-- λ> sv
+-- 6
+
+nums, range, range2 :: [Integer]
+nums   = [1,2,3,19]
+range  = [1..100]
+range2 = [2,4..100]
+unlimited = [1..]
+
+hello1 :: [Char]
+hello1 = ['h', 'e', 'l', 'l', 'o']
+
+hello2 :: String
+hello2 = "hello"
+
+helloSame = hello1 == hello2
+-- λ> helloSame
+-- True
+
+l =
+  [ (x `mod` 3) * y
+  | x <- [1 .. 10]
+  , y <- [2, 4, 40]
+  , (x * y) `mod` 2 == 0 ]
+-- λ> l
+-- [2,4,40,4,8,80,0,0,0,2,4,40,4,8,80,0,0,0,2,4,40,4,8,80,0,0,0,2,4,40]
+
+ex18 = 1 : []
+ex19 = 3 : (1 : [])
+ex20 = 2 : 3 : 4 : []
+ex21 = [2,3,4] == 2 : 3 : 4 : []
+
+-- Compute the length of a list of Integers.
+intListLength :: [Integer] -> Integer
+intListLength []     = 0
+intListLength (_:xs) = 1 + intListLength xs
+
+sumEveryTwo :: [Integer] -> [Integer]
+sumEveryTwo []         = []     -- Do nothing to the empty list
+sumEveryTwo (x:[])     = [x]    -- Do nothing to lists with a single element
+sumEveryTwo (x:(y:zs)) = (x + y) : sumEveryTwo zs
+
+-- Generate the sequence of hailstone iterations from a starting number.
+hailstoneSeq :: Integer -> [Integer]
+hailstoneSeq 1 = [1]
+hailstoneSeq n = n : hailstoneSeq (hailstone n)
+
+-- The number of hailstone steps needed to reach 1 from a starting
+-- number.
+hailstoneLen :: Integer -> Integer
+hailstoneLen n = intListLength (hailstoneSeq n) - 1
+-- λ> hailstoneSeq 100
+-- [100,50,25,76,38,19,58,29,88,44,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1]
+
+-- λ> hailstoneLen 9
+-- 19
+-- λ> hailstoneLen 999999999999999999999999999999999999999999999999999999999999999999999
+-- 2026
