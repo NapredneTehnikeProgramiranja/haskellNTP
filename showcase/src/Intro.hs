@@ -195,3 +195,10 @@ hailstoneLen n = intListLength (hailstoneSeq n) - 1
 -- 19
 -- λ> hailstoneLen 999999999999999999999999999999999999999999999999999999999999999999999
 -- 2026
+
+-- x ++ "string"
+-- <interactive>:105:1: error:
+--     • Couldn't match expected type ‘[Char]’ with actual type ‘Int’
+--     • In the first argument of ‘(++)’, namely ‘x’
+--       In the expression: x ++ "string"
+--       In an equation for ‘it’: it = x ++ "string"
