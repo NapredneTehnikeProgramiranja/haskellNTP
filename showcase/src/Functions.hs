@@ -18,7 +18,7 @@ aFoo1 (x, xx) y =
 
 aFoo2 :: (String, Integer) -> [Integer] -> [Integer]
 aFoo2 _ [] = []
-aFoo2 (x, xx) y =
+aFoo2 (_, xx) y =
   case y of
     _
       | length y == 1 -> y
@@ -29,7 +29,7 @@ aFoo2 (x, xx) y =
 -- [6,8,10]
 
 aFoo3 :: (String, Integer) -> [Integer] -> [Integer]
-aFoo3 (x, xx) y =
+aFoo3 (_, xx) y =
   case y of
     [] -> []
     y:ys
